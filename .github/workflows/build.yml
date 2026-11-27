@@ -1,0 +1,129 @@
+name: Build APK
+on: [push, workflow_dispatch]
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 17 }
+      - uses: gradle/actions/setup-gradle@v4
+        with: { gradle-version: 8.7 }
+      - name: Create Android project around index.html
+        run: |
+          test -f index.html || { echo "index.html not found in repo root"; exit 1; }
+          mkdir -p app/src/main/assets app/src/main/java/com/morok/game
+          cp index.html app/src/main/assets/index.html
+          mkdir -p app/src/main/res/drawable
+          cat > app/src/main/res/drawable/ic_launcher.xml <<'EOF'
+          <vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+              <path android:fillColor="#1c1925" android:pathData="M0,0h108v108h-108z"/>
+              <path android:fillColor="#2a2538" android:pathData="M0,92h108v16h-108z"/>
+              <path android:fillColor="#5a5470" android:pathData="M22,88V50a32,32 0 0 1 64,0V88z"/>
+              <path android:fillColor="#7a7490" android:pathData="M22,88V50a32,32 0 0 1 6,-18V88z"/>
+              <path android:fillColor="#0b0a10" android:pathData="M31,88V52a23,23 0 0 1 46,0V88z"/>
+              <path android:fillColor="#e8c04a" android:pathData="M49,15h10v9h-10z"/>
+              <path android:fillColor="#7a4f14" android:pathData="M49,71h10v5h-10z"/>
+              <path android:fillColor="#a8731f" android:pathData="M45,76h18v5h-18z"/>
+              <path android:fillColor="#c9962f" android:pathData="M41,81h26v4h-26z"/>
+              <path android:fillColor="#e8c04a" android:pathData="M37,85h34v4h-34z"/>
+              <path android:fillColor="#fff2b0" android:pathData="M37,85h34v1h-34z"/>
+              <path android:fillColor="#d0483f" android:pathData="M42,46h6v4h-6z"/>
+              <path android:fillColor="#d0483f" android:pathData="M60,46h6v4h-6z"/>
+              <path android:fillColor="#ffd0c8" android:pathData="M43,47h2v2h-2z"/>
+              <path android:fillColor="#ffd0c8" android:pathData="M61,47h2v2h-2z"/>
+              <path android:fillColor="#5a5470" android:pathData="M10,66h10v5h-10z"/>
+              <path android:fillColor="#5a5470" android:pathData="M88,66h10v5h-10z"/>
+              <path android:fillColor="#ff9a2a" android:pathData="M12,54h6v12h-6z"/>
+              <path android:fillColor="#ff9a2a" android:pathData="M90,54h6v12h-6z"/>
+              <path android:fillColor="#ffe27a" android:pathData="M13,58h4v8h-4z"/>
+              <path android:fillColor="#ffe27a" android:pathData="M91,58h4v8h-4z"/>
+          </vector>
+          EOF
+          echo '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' | base64 -d > app/morok.jks
+          cat > settings.gradle <<'EOF'
+          pluginManagement { repositories { google(); mavenCentral(); gradlePluginPortal() } }
+          dependencyResolutionManagement { repositories { google(); mavenCentral() } }
+          rootProject.name = "MorokGame"
+          include ':app'
+          EOF
+          cat > build.gradle <<'EOF'
+          plugins { id 'com.android.application' version '8.5.2' apply false }
+          EOF
+          echo "android.useAndroidX=true" > gradle.properties
+          cat > app/build.gradle <<'EOF'
+          plugins { id 'com.android.application' }
+          android {
+              namespace 'com.morok.game'
+              compileSdk 34
+              defaultConfig { applicationId 'com.morok.game'; minSdk 21; targetSdk 34; versionCode Integer.parseInt(System.getenv('RUN_N') ?: '1'); versionName '2.0' }
+              signingConfigs { fixed { storeFile file('morok.jks'); storePassword 'morokgame'; keyAlias 'morok'; keyPassword 'morokgame' } }
+              buildTypes { debug { signingConfig signingConfigs.fixed } release { minifyEnabled false; signingConfig signingConfigs.fixed } }
+          }
+          EOF
+          cat > app/src/main/AndroidManifest.xml <<'EOF'
+          <?xml version="1.0" encoding="utf-8"?>
+          <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+              <uses-permission android:name="android.permission.INTERNET"/>
+              <uses-permission android:name="android.permission.VIBRATE"/>
+              <application android:label="Глубины Морока" android:icon="@drawable/ic_launcher" android:roundIcon="@drawable/ic_launcher" android:allowBackup="true"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:hardwareAccelerated="true">
+                  <activity android:name=".MainActivity" android:exported="true"
+                      android:screenOrientation="sensorLandscape"
+                      android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize">
+                      <intent-filter>
+                          <action android:name="android.intent.action.MAIN"/>
+                          <category android:name="android.intent.category.LAUNCHER"/>
+                      </intent-filter>
+                  </activity>
+              </application>
+          </manifest>
+          EOF
+          cat > app/src/main/java/com/morok/game/MainActivity.java <<'EOF'
+          package com.morok.game;
+
+          import android.app.Activity;
+          import android.content.pm.ActivityInfo;
+          import android.os.Bundle;
+          import android.view.View;
+          import android.view.WindowManager;
+          import android.webkit.WebSettings;
+          import android.webkit.WebView;
+          import android.webkit.WebViewClient;
+
+          public class MainActivity extends Activity {
+              private WebView web;
+
+              @Override protected void onCreate(Bundle b) {
+                  super.onCreate(b);
+                  setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+                  getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                  web = new WebView(this);
+                  web.setBackgroundColor(0xFF13111A);
+                  setContentView(web);
+                  WebSettings s = web.getSettings();
+                  s.setJavaScriptEnabled(true);
+                  s.setDomStorageEnabled(true);
+                  s.setAllowFileAccess(true);
+                  web.setWebViewClient(new WebViewClient());
+                  web.loadUrl("file:///android_asset/index.html");
+                  immersive();
+              }
+
+              private void immersive() {
+                  getWindow().getDecorView().setSystemUiVisibility(
+                      View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN
+                      | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                      | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+              }
+
+              @Override public void onWindowFocusChanged(boolean f) { super.onWindowFocusChanged(f); if (f) immersive(); }
+              @Override protected void onPause() { super.onPause(); web.onPause(); }
+              @Override protected void onResume() { super.onResume(); web.onResume(); }
+          }
+          EOF
+      - run: gradle assembleDebug
+        env:
+          RUN_N: ${{ github.run_number }}
+      - uses: actions/upload-artifact@v4
+        with: { name: morok-apk, path: app/build/outputs/apk/debug/app-debug.apk }
