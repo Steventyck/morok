@@ -40,6 +40,7 @@ jobs:
               <path android:fillColor="#ffe27a" android:pathData="M91,58h4v8h-4z"/>
           </vector>
           EOF
+          echo 'MIIKMgIBAzCCCdwGCSqGSIb3DQEHAaCCCc0EggnJMIIJxTCCBawGCSqGSIb3DQEHAaCCBZ0EggWZMIIFlTCCBZEGCyqGSIb3DQEMCgECoIIFQDCCBTwwZgYJKoZIhvcNAQUNMFkwOAYJKoZIhvcNAQUMMCsEFIhspfkZcqsRnNpP3Ni7yrtCM5x5AgInEAIBIDAMBggqhkiG9w0CCQUAMB0GCWCGSAFlAwQBKgQQDLubps5FwVsMalMzIVg4EgSCBNCwbhPfPGh+2qhEkcDF1jdCogmUszQILinpv4J1Wf5IxBey2meejZPOXjCROBKqGJI7k0iduI3+4vCjx3JqJLOd8p8auPAQnxW2bS5niItYkLSH7epksfYpRCShYEDD3IWfvbDfWcrEqgCy1Ew0RgsLMSDspEe9aE3U+dt/P4/2/cwPoTsXR2KLF4w5v5A9ZFTEeCBWZutDJ4J8CX7TxVuFIq2SOEUaBLcT0EzVG7a7+JqnmzIuqC8nb3m0g/zhYgqJ13kr7KHUMgUTZhEo/+N3WYB1fpk253cEqNDsn811m+bmCJ6uye1YNBsl1NaDsDwzeruFt6FbyRIptPFm0PXiWvzN0eHixpxahoFI/w27673e0ZcO9mORhukHUgE+Ka//YSquX7JlLMxPYO4Sk6g3vFxjnNwv4XkOSz9aKucej/G+8v00GxffPjCw+PpBa+BfYQiy8RTAS0F53hMTHN4wRo2EAKRiBevf/6Aa0TnFuz34PbOwk+7nqVi+J1+uxoR/MCszRw5uR/1QW9h5mywCDNPCw7Kwumj+I9sHSA6U12KPEKYIN8btugXMhTdJ8u6/sqPHxJOsr6KZWViwpEv8rrnP67NKhz3t7H6HvY7iFSvC72z9sPcFFadSayrUZ1WeVuYJu3YNDOtCJZGkvzGZ4CvUW49jLui5Xa+BkVAof3oIM0e8hRJQDY6e1Q78NFabipv/b8P5/JKjDOv0sFlrW+RYyp411e8fA6ioXxNuq4GyxhfCRSnByiJI5j9oVzmvgezVxPSksDOwFqycWSXC4r+8+PB2rMC6wVrH9L37reIjxKBjOs5yO7HGHsj8vro9Qe78tePGgrVNKskAnbnA2+jwYMrWi3zhaZI72zOW7d/N3XM9KnxZEhL9CZzB5Pxswu0a/bfUNei1zumKcY2dv3M5wDUkz/GL4SZVghqJo9uowKje8xkZ5BXcu0PxD3P2DHl3fdOA+T3ftcYAGilMwaQhD7lqmJcBV73Bl5hj1w4wBglWxha7UjCxaONA6WFG22tL7W4SUImPZnw/4xpczpNdFLTNtcf/A5Prf8iM+R9ZtXvAqdcgpylvgOZRMXT0J8R7YVQhPUXrtC7uO0+ckgtIRVdL4oYRgB/t0FS2DicL2Fw4aInGcqE4diYfcn3VuJ9HQHiFZEOPC1MmfdE+cT4wBduZ3g4EDbzg4471H7yqUieks+zPrP9Muw6LGs4AP0c8SucsQxBmNu+Xn9nrT7BMqtgO+w9ACv+srKghUkZqlTdg3L576MlD+Q5+o7XkFjydBqVUqdeM72yyNxhNbqpB2MAyVnZdBR5jbbxo9ZG0nTH2RBnuRUCVkb9humXnEtjS7Hu+C6G/6fkKuX1nE6XRXZvO1jTB0Wu6G6KpfA3abZMTRZWh0qpNJVYF9oW4+3juwq1L2r2JfToruOrckcusLg/z4t08/mU+gnEGzD7LsXuI30Ek35cYzqpqrBjtoXLMP4PzJ+nff3YQGLytsxcAZ69ePWsYSqPPIq+Pb9YYrSouYQtJ9n6y/N7hTHM6QNAGopT7wwE0oEkjN/55EAlp1/Ce1tYzD7OVEd8rWTiyB+yj11SYBo5fJGI/GbXA5CH8b9oTZmbvqvDq3SySlVinVYpipQjnLPj66WT18TE+MBkGCSqGSIb3DQEJFDEMHgoAbQBvAHIAbwBrMCEGCSqGSIb3DQEJFTEUBBJUaW1lIDE3OTU3OTE5MDU4MzYwggQRBgkqhkiG9w0BBwagggQCMIID/gIBADCCA/cGCSqGSIb3DQEHATBmBgkqhkiG9w0BBQ0wWTA4BgkqhkiG9w0BBQwwKwQUWazaqArFafmhOQz+9D3zct9SbE4CAicQAgEgMAwGCCqGSIb3DQIJBQAwHQYJYIZIAWUDBAEqBBASUsaZM1NQSIbaAxt9FS4tgIIDgHiq9PZ7izJhgipqZMkYq646yD+n1lA8cuQ5Inv/uRdfwwf4xABi5DlXsVemOZdjmhsU7rubr8FmlcL55uiP4xajUoCMEeiUM3y1O7N5amliQe3xoxyBpZtdSNeyRpd6p1I9YNO32MgZhayniK6J5yEOP9xZQWcluC5oTpevIpD7FEIu8GxtcDRWyVa67bw3mvQPsu4EnnaOjf4V3OUmfRdMxz3QMkWrk5b013s9ggpWJx7DmmOsxHaZyndq1NUK/Nn4OqtMmiMjDe3IlCWp4CTifruRTERmo5nXMZJ4GiCh8QwfgmWoW9EdXk6Q0gvQDH+/CHkYhbOeDLU9scsz2dPXiWEM0B90aCIJYEuSS15C+yE5Vq9Dp9zrYe4eHlv0U1r1t8tB3UWQmOCrrnkpvdYWysui0YJslV9Fr4chpFndWouDIDMMNRNYZDD2piJ26NVK3UYGeBCL14dOJCJFpx5zu2qOWXh4NKFPyxPSmMVNXO9YfmeTUcmEnV0OF7aehYVPTOR8g5NWtnUAf7nG1HwQNqIpUz+rgLbm8E2AaDKXlaJTE/b3Uzsn1OYoDENfu6rbBL6B5nDmohCQXii/Fh58ahp2Zz4+zTktsarcE+/z//n9mN/imlt25Gi6YjgN/fewrIBRRag1NPQ9wu9K0uiFtfhDV94YPZpsFiXZLFahUNAvvLstG5FP/iR1AciM9Ivd9SVg8A0QCenZRWp+9cI6UMxj/J45fUz2z+I+Lp1NV3tSD4sj4/BMfp9WcQqFekKHy51P5PVngCDl9lr82AJ85aFY0z23XTkLRI/xHIB7jXr/NVKGhklNeXMZzoqB8BWN8iOcoFLl7lsA020ggCO3o0uXj3Jy7BptmnzGWUZ42J20bLEUy0w2Z2lgb8krhKLUJHhGki8XxYQEG6R225Addsf3Dv3gGg8sgGMe2LzyQ5J6xRxzcStdQcIiuzDAX9uzXc/Tmq/TjiNvaym4n4JwugotkRfJjxBy3BBashTkSXSvGd71u3gh2vmza6p0eCnGeihwpWG9VaCAAw6WiDykIttcTpB5F0iUOjNboBAxJcDqHtpQx+eGxGpFmQEevcuXMIpwh/RxG8JHjbzr7gmAeappPON+8tnmEuicIJjWZZzLodx40FjYqL4YdQTof5mxlPI/lbS/Hed3ZeIVRIVyhpI3ES3Tef/XMXuIcE1gME0wMTANBglghkgBZQMEAgEFAAQgqm/nisicoR3vuwyM/wHZYd1i///HYalvUTr2L3fxzewEFBL8thbhgzWoubcPQc7/ot5n+dD9AgInEA==' | base64 -d > app/morok.jks
           cat > settings.gradle <<'EOF'
           pluginManagement { repositories { google(); mavenCentral(); gradlePluginPortal() } }
           dependencyResolutionManagement { repositories { google(); mavenCentral() } }
@@ -55,8 +56,7 @@ jobs:
           android {
               namespace 'com.morok.game'
               compileSdk 34
-              defaultConfig { applicationId 'com.morok.game'; minSdk 21; targetSdk 34; versionCode 1; versionName '1.0' }
-              buildTypes { release { minifyEnabled false } }
+              defaultConfig { applicationId 'com.morok.game'; minSdk 21; targetSdk 34; versionCode Integer.parseInt(System.getenv('RUN_N') ?: '1'); versionName '2.0' }
           }
           EOF
           cat > app/src/main/AndroidManifest.xml <<'EOF'
@@ -121,5 +121,12 @@ jobs:
           }
           EOF
       - run: gradle assembleDebug
+        env:
+          RUN_N: ${{ github.run_number }}
+      - name: Sign with fixed key
+        run: |
+          AS=$(ls $ANDROID_HOME/build-tools/*/apksigner | sort -V | tail -1)
+          $AS sign --ks app/morok.jks --ks-key-alias morok --ks-pass pass:morokgame --key-pass pass:morokgame --out morok.apk app/build/outputs/apk/debug/app-debug.apk
+          $AS verify morok.apk
       - uses: actions/upload-artifact@v4
-        with: { name: morok-apk, path: app/build/outputs/apk/debug/app-debug.apk }
+        with: { name: morok-apk, path: morok.apk }
